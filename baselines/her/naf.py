@@ -11,6 +11,7 @@ from baselines.her.normalizer import Normalizer
 from baselines.her.replay_buffer import ReplayBuffer
 from baselines.common.mpi_adam import MpiAdam
 from baselines.common import tf_util
+from baselines.her.naf_utils.exploration import *
 
 
 def dims_to_shapes(input_dims):
@@ -65,6 +66,7 @@ class NAF(object):
         buffer_shapes['g'] = (buffer_shapes['g'][0], self.dimg)
         buffer_shapes['ag'] = (self.T, self.dimg)
 
+
         buffer_size = (self.buffer_size // self.rollout_batch_size) * self.rollout_batch_size
         self.buffer = ReplayBuffer(buffer_shapes, buffer_size, self.T, self.sample_transitions)
 
@@ -111,7 +113,8 @@ class NAF(object):
         noise = noise_eps * self.max_u * np.random.randn(*u.shape)  # gaussian noise
         u += noise
         u = np.clip(u, -self.max_u, self.max_u)
-        u += np.random.binomial(1, random_eps, u.shape[0]).reshape(-1, 1) * (self._random_action(u.shape[0]) - u)  # eps-greedy
+        u += np.random.binomial(1, random_eps, u.shape[0]).reshape(-1, 1) * (
+                    self._random_action(u.shape[0]) - u)  # eps-greedy
         if u.shape[0] == 1:
             u = u[0]
         u = u.copy()
@@ -208,20 +211,15 @@ class NAF(object):
         return self.buffer.get_current_size()
 
     def _sync_optimizers(self):
-        self.Q_adam.sync()
-        self.pi_adam.sync()
+        self.adam.sync()
 
     def _grads(self):
         # Avoid feed_dict here for performance!
-        Q_grad = self.sess.run([
-
-            self.Q_grad_tf
-
-        ])
+        Q_grad = self.sess.run([self.Q_grad_tf ])
         return  Q_grad
 
     def _update(self, Q_grad):
-        self.Q_adam.update(Q_grad, self.Q_lr)
+        self.adam.update(Q_grad, self.Q_lr)
 
     def sample_batch(self):
         if self.bc_loss: #use demonstration buffer to sample as well if bc_loss flag is set TRUE
@@ -318,23 +316,22 @@ class NAF(object):
         target_value= self.target.value
         clip_range = (-self.clip_return, 0. if self.clip_pos_returns else np.inf)
         target_tf = tf.clip_by_value(batch_tf['r'] + self.gamma * target_value, *clip_range)
-        self.Q_loss_tf = tf.reduce_mean(tf.square(tf.stop_gradient(target_tf) - self.main.Q))
+        self.Q_loss_tf = tf.reduce_mean(tf.square(target_tf - self.main.Q))
 
-        Q_grads_tf = tf.gradients(self.Q_loss_tf, self._vars('main/Q'))
+        Q_grads_tf = tf.gradients(self.Q_loss_tf, self._vars('main'))
 
-        assert len(self._vars('main/Q')) == len(Q_grads_tf)
+        assert len(self._vars('main')) == len(Q_grads_tf)
 
-        self.Q_grads_vars_tf = zip(Q_grads_tf, self._vars('main/Q'))
-        self.Q_grad_tf = flatten_grads(grads=Q_grads_tf, var_list=self._vars('main/Q'))
+        self.Q_grads_vars_tf = zip(Q_grads_tf, self._vars('main'))
+        self.Q_grad_tf = flatten_grads(grads=Q_grads_tf, var_list=self._vars('main'))
 
         # optimizers
-        self.Q_adam = MpiAdam(self._vars('main/Q'), scale_grad_by_procs=False)
-        self.pi_adam = MpiAdam(self._vars('main/pi'), scale_grad_by_procs=False)
-        self.value_adam = MpiAdam(self._vars('main/value'), scale_grad_by_procs=False)
+        self.adam = MpiAdam(self._vars('main'), scale_grad_by_procs=False)
+
 
         # polyak averaging
-        self.main_vars = self._vars('main/Q') + self._vars('main/value') + self._vars('main/pi')
-        self.target_vars = self._vars('target/Q') + self._vars('target/value')+self._vars('target/pi')
+        self.main_vars = self._vars('main/hidden') + self._vars('main/value') + self._vars('main/advantage')
+        self.target_vars = self._vars('target/hidden') + self._vars('target/value')+self._vars('target/advantage')
         self.stats_vars = self._global_vars('o_stats') + self._global_vars('g_stats')
         self.init_target_net_op = list(
             map(lambda v: v[0].assign(v[1]), zip(self.target_vars, self.main_vars)))

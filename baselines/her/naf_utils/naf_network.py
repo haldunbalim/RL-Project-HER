@@ -27,20 +27,65 @@ class Network:
     # Prepare inputs for actor and critic.
     o = self.o_stats.normalize(self.o_tf)
     g = self.g_stats.normalize(self.g_tf)
-    input_pi = tf.concat(axis=1, values=[o, g])  # for actor
+    input_pi = tf.concat(axis=1, values=[o, g, self.u_tf/self.max_u])
+
+    hid_outs = {}
 
     # Networks.
-    with tf.variable_scope('pi'):
-      self.pi_tf = self.max_u * tf.tanh(nn(
-        input_pi, [self.hidden] * self.layers + [self.dimu]))
+    self.random_uniform_init = tf.random_uniform_initializer(-0.02, 0.02, seed=123)
+
+    with tf.variable_scope('hidden'):
+      hidden_weights_1 = tf.get_variable(name="hw_1", shape=[input_pi.get_shape()[-1],
+                                                             self.hidden],
+                                         dtype=tf.float32, initializer=self.random_uniform_init)
+
+      hidden_bias_1 = tf.get_variable(name="bias_1", shape=[self.hidden],
+                                      dtype=tf.float32, initializer=self.random_uniform_init)
+
+      hidden_weights_2 = tf.get_variable(name="hw_2", shape=[self.hidden,self.hidden],
+                                         dtype=tf.float32, initializer=self.random_uniform_init)
+
+      hidden_bias_2 = tf.get_variable(name="bias_2", shape=[self.hidden],
+                                      dtype=tf.float32, initializer=self.random_uniform_init)
+
+      hidden_weights_3 = tf.get_variable(name="hw_3", shape=[self.hidden,self.hidden],
+                                         dtype=tf.float32, initializer=self.random_uniform_init)
+
+      hidden_bias_3 = tf.get_variable(name="bias_3", shape=[self.hidden],
+                                      dtype=tf.float32, initializer=self.random_uniform_init)
+
+      hidden_1_out = tf.nn.tanh(
+        tf.nn.xw_plus_b(input_pi, weights=hidden_weights_1, biases=hidden_bias_1))
+      hidden_2_out = tf.nn.tanh(
+        tf.nn.xw_plus_b(hidden_1_out, weights=hidden_weights_2, biases=hidden_bias_2))
+      hidden_3_out = tf.nn.tanh(
+        tf.nn.xw_plus_b(hidden_2_out, weights=hidden_weights_3, biases=hidden_bias_3))
+
+      hid_outs['value'], hid_outs['l'], hid_outs['pi_tf'] = hidden_3_out, hidden_3_out, hidden_3_out
 
     with tf.variable_scope('value'):
-      input_vec = tf.concat(axis=1, values=[o, g, self.u_tf/self.max_u])
-      self.value = nn(input_vec, [self.hidden] * self.layers + [1])
+      weights_val = tf.get_variable(name="val_w", shape=[self.hidden,1],
+                                         dtype=tf.float32, initializer=self.random_uniform_init)
 
-    with tf.variable_scope('Q'):
-      input_vec = tf.concat(axis=1, values=[o, g, self.u_tf/self.max_u])
-      self.l = nn(input_vec, [self.hidden] * self.layers + [(dimu*(dimu+1)/2)])
+      bias_val = tf.get_variable(name="val_b", shape=[1],
+                                      dtype=tf.float32, initializer=self.random_uniform_init)
+      self.value = tf.nn.tanh(tf.nn.xw_plus_b(hid_outs["value"], weights=weights_val, biases=bias_val))
+
+
+    with tf.variable_scope('advantage'):
+      weights_l = tf.get_variable(name="l_w", shape=[self.hidden, dimu*(dimu+1)/2],
+                                    dtype=tf.float32, initializer=self.random_uniform_init)
+
+      bias_l = tf.get_variable(name="l_b", shape=[dimu*(dimu+1)/2],
+                                 dtype=tf.float32, initializer=self.random_uniform_init)
+      self.l = tf.nn.tanh(tf.nn.xw_plus_b(hid_outs["l"], weights=weights_l, biases=bias_l))
+
+      weights_pi_tf = tf.get_variable(name="pi_tf_w", shape=[self.hidden, dimu],
+                                    dtype=tf.float32, initializer=self.random_uniform_init)
+
+      bias_pi_tf = tf.get_variable(name="pi_tf_b", shape=[dimu],
+                                 dtype=tf.float32, initializer=self.random_uniform_init)
+      self.pi_tf = tf.nn.xw_plus_b(hid_outs["pi_tf"], weights=weights_pi_tf, biases=bias_pi_tf)
 
       pivot = 0
       rows = []
