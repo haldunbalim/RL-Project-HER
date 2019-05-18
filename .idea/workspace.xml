@@ -2,8 +2,90 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c279c318-f530-4e7e-b4c0-10b4d1094934" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/baselines/her/naf.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/her/naf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/bench/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/bench/benchmarks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/bench/monitor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/atari_wrappers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/cg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/cmd_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/console_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/distributions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/input.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/math_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/misc_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_adam.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_adam_optimizer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_fork.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_moments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_running_mean_std.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/mpi_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/plot_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/policies.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/retro_wrappers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/runners.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/running_mean_std.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/schedules.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/segment_tree.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/test_mpi_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/envs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/her/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/envs/fixed_sequence_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/envs/identity_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/envs/identity_env_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/envs/mnist_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_cartpole.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_doc_examples.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_env_after_learn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_fetchreach.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_fixed_sequence.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_identity.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_mnist.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_plot_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_schedules.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_segment_tree.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_serialization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_tf_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/test_with_mpi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tests/util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tf_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/tile_images.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/dummy_vec_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/shmem_vec_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/subproc_vec_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/test_vec_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/test_video_recorder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_frame_stack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_monitor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_normalize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_remove_dict_obs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/vec_env/vec_video_recorder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/common/wrappers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/actor_critic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/ddpg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/her/experiment/data_generation/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/data_generation/fetch_data_generation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/play.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/plot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/her.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/her_sampler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/naf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/naf_utils/exploration.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/naf_utils/ops.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/normalizer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/replay_buffer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/rollout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/her/util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baselines/run.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,16 +94,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/RL_Proj$run.coverage" NAME="run Coverage Results" MODIFIED="1558139125240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baselines" />
+    <SUITE FILE_PATH="coverage/RL_Proj$run.coverage" NAME="run Coverage Results" MODIFIED="1558184326095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RL_Proj$naf.coverage" NAME="naf Coverage Results" MODIFIED="1558112628213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baselines/her" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/baselines/her/naf.py">
+        <entry file="file://$PROJECT_DIR$/her/naf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="328" column="17" selection-start-line="328" selection-start-column="13" selection-end-line="328" selection-end-column="17" />
+            <state relative-caret-position="145">
+              <caret line="253" selection-start-line="253" selection-end-line="253" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -29,13 +111,48 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+            <state relative-caret-position="92">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/her/her.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/mpi_moments.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-105">
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/her/experiment/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="215" selection-start-line="215" selection-end-line="215" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,8 +169,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>scope</find>
-      <find>naf_network</find>
       <find>main</find>
       <find>create_naf_net</find>
       <find>q_filter</find>
@@ -74,14 +189,16 @@
       <find>get_action</find>
       <find>target</find>
       <find>create_network</find>
-      <find>naf</find>
       <find>nn</find>
       <find>config</find>
-      <find>noise</find>
       <find>for</find>
       <find>get_actions</find>
       <find>create</find>
       <find>adam</find>
+      <find>naf</find>
+      <find>co</find>
+      <find>noise</find>
+      <find>DEFA</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,13 +216,20 @@
         <option value="$PROJECT_DIR$/baselines/her/experiment/config.py" />
         <option value="$PROJECT_DIR$/baselines/her/naf.py" />
         <option value="$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py" />
+        <option value="$PROJECT_DIR$/her/experiment/config.py" />
+        <option value="$PROJECT_DIR$/her/naf.py" />
+        <option value="$PROJECT_DIR$/common/vec_env/__init__.py" />
+        <option value="$PROJECT_DIR$/common/vec_env/vec_video_recorder.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/common/cmd_util.py" />
+        <option value="$PROJECT_DIR$/her/her.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1366" />
-    <option name="height" value="677" />
+    <option name="height" value="654" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -123,21 +247,7 @@
             </path>
             <path>
               <item name="RL Proj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RL Proj" type="462c0819:PsiDirectoryNode" />
-              <item name="baselines" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RL Proj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RL Proj" type="462c0819:PsiDirectoryNode" />
-              <item name="baselines" type="462c0819:PsiDirectoryNode" />
-              <item name="her" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RL Proj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RL Proj" type="462c0819:PsiDirectoryNode" />
-              <item name="baselines" type="462c0819:PsiDirectoryNode" />
-              <item name="her" type="462c0819:PsiDirectoryNode" />
-              <item name="naf_utils" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -154,6 +264,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/baselines/her/naf_utils" />
     </key>
   </component>
@@ -169,29 +280,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="naf" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="RL Proj" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/baselines/her" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/baselines/her/naf_utils/naf2.py" />
-      <option name="PARAMETERS" value="--alg=her --env=FetchReach-v1 --num_timesteps=5000" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RL Proj" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -200,13 +289,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/baselines" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/baselines/run.py" />
-      <option name="PARAMETERS" value="--alg=her --env=FetchReach-v1 --num_timesteps=5000 --play" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="--alg=her --env=FetchReach-v1 --num_timesteps=5000 --play --rl_alg=ddpg" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -214,14 +303,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.naf" />
-      <item itemvalue="Python.run" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run" />
-        <item itemvalue="Python.naf" />
       </list>
     </recent_temporary>
   </component>
@@ -239,19 +323,19 @@
       <workItem from="1558036548410" duration="443000" />
       <workItem from="1558091380430" duration="575000" />
       <workItem from="1558097021183" duration="150000" />
-      <workItem from="1558097197729" duration="36426000" />
+      <workItem from="1558097197729" duration="37055000" />
+      <workItem from="1558181750135" duration="2484000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39249000" />
+    <option name="totallyTimeSpent" value="42362000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="677" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1366" height="654" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.26510575" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2688822" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32991454" />
@@ -261,8 +345,8 @@
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32991454" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.32991454" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.3291815" />
+      <window_info active="true" anchor="bottom" id="Debug" order="9" visible="true" weight="0.39679715" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -281,17 +365,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/baselines/her/naf_utils/naf2.py</url>
+          <url>file://$PROJECT_DIR$/her/naf_utils/naf2.py</url>
           <line>136</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/baselines/her/ddpg.py</url>
+          <url>file://$PROJECT_DIR$/her/ddpg.py</url>
           <line>357</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/baselines/her/naf.py</url>
+          <url>file://$PROJECT_DIR$/her/naf.py</url>
           <line>254</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
@@ -299,14 +383,14 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/baselines/her/her_sampler.py">
+    <entry file="file://$PROJECT_DIR$/her/her_sampler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/common/policies.py">
+    <entry file="file://$PROJECT_DIR$/common/policies.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="184" column="7" selection-start-line="184" selection-start-column="7" selection-end-line="184" selection-end-column="7" />
@@ -316,14 +400,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/naf_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/normalizer.py">
+    <entry file="file://$PROJECT_DIR$/baselines/her/naf_network.py" />
+    <entry file="file://$PROJECT_DIR$/her/normalizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -332,20 +410,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/common/tf_util.py">
+    <entry file="file://$PROJECT_DIR$/common/tf_util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/naf_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="69" lean-forward="true" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/naf_config.py" />
     <entry file="file://$USER_HOME$/.conda/envs/keratoconus_dl/lib/python3.7/site-packages/tensorflow/python/keras/utils/generic_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -353,7 +425,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/ops.py">
+    <entry file="file://$PROJECT_DIR$/her/naf_utils/ops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-41">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
@@ -363,27 +435,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.conda/envs/keratoconus_dl/lib/python3.7/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="321" selection-start-line="321" selection-end-line="321" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.conda/envs/keratoconus_dl/lib/python3.7/site-packages/tensorflow/python/keras/layers/core.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12">
           <caret line="928" column="17" selection-start-line="928" selection-start-column="17" selection-end-line="928" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="243" selection-start-line="243" selection-end-line="243" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -401,24 +456,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/common/mpi_adam.py">
+    <entry file="file://$PROJECT_DIR$/common/mpi_adam.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-700">
           <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/naf2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/exploration.py">
+    <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/naf2.py" />
+    <entry file="file://$PROJECT_DIR$/her/naf_utils/exploration.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="32" />
@@ -428,7 +474,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/rollout.py">
+    <entry file="file://$PROJECT_DIR$/her/rollout.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
           <caret line="75" selection-start-line="75" selection-end-line="75" />
@@ -445,16 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/experiment/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2119">
-          <caret line="154" column="4" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.conda/envs/keratoconus_dl/lib/python3.7/site-packages/tensorflow/python/ops/variable_scope.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -462,24 +498,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/her.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/ddpg.py">
+    <entry file="file://$PROJECT_DIR$/her/ddpg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
           <caret line="193" column="55" selection-start-line="193" selection-start-column="49" selection-end-line="193" selection-end-column="55" />
@@ -489,7 +508,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/actor_critic.py">
+    <entry file="file://$PROJECT_DIR$/her/actor_critic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="82" />
@@ -499,22 +518,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/naf.py">
+    <entry file="file://$PROJECT_DIR$/her/naf_utils/naf_network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="328" column="17" selection-start-line="328" selection-start-column="13" selection-end-line="328" selection-end-column="17" />
+        <state relative-caret-position="15">
+          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/vec_env/__init__">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/vec_env/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/vec_env/vec_env.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/vec_env/vec_video_recorder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/tests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/keratoconus_dl/lib/python3.7/argparse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="2035" column="19" selection-start-line="2035" selection-start-column="19" selection-end-line="2035" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/cmd_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="173" column="5" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bench/monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.conda/envs/keratoconus_dl/lib/python3.7/site-packages/tensorflow/python/framework/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/her/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/her/naf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="253" selection-start-line="253" selection-end-line="253" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py">
+    <entry file="file://$USER_HOME$/.conda/envs/keratoconus_dl/lib/python3.7/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+        <state relative-caret-position="142">
+          <caret line="323" selection-start-line="323" selection-end-line="323" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/her/experiment/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="215" selection-start-line="215" selection-end-line="215" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/mpi_moments.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/her/her.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
