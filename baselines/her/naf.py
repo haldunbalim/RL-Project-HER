@@ -92,7 +92,7 @@ class NAF(object):
         return actions, None, None, None
 
 
-    def get_actions(self, o, ag, g, noise_eps=0., random_eps=0., use_target_net=False,
+    def get_actions(self, o, ag, g, noise_eps=0., random_eps=0.1, use_target_net=False,
                     compute_Q=False):
         o, g = self._preprocess_og(o, ag, g)
         policy = self.target if use_target_net else self.main

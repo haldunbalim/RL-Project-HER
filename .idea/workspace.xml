@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c279c318-f530-4e7e-b4c0-10b4d1094934" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/her/experiment/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/her/experiment/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baselines/her/naf.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/her/naf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py" afterDir="false" />
     </list>
@@ -14,16 +12,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/RL_Proj$run.coverage" NAME="run Coverage Results" MODIFIED="1558137289107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baselines" />
+    <SUITE FILE_PATH="coverage/RL_Proj$run.coverage" NAME="run Coverage Results" MODIFIED="1558139125240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baselines" />
     <SUITE FILE_PATH="coverage/RL_Proj$naf.coverage" NAME="naf Coverage Results" MODIFIED="1558112628213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baselines/her" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/baselines/her/naf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="112" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="87">
+              <caret line="328" column="17" selection-start-line="328" selection-start-column="13" selection-end-line="328" selection-end-column="17" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -31,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="107" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="65">
+              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -54,8 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logs</find>
-      <find>actor</find>
       <find>scope</find>
       <find>naf_network</find>
       <find>main</find>
@@ -70,11 +66,9 @@
       <find>create_net</find>
       <find>action</find>
       <find>gen</find>
-      <find>create</find>
       <find>update_tr</find>
       <find>get</find>
       <find>env</find>
-      <find>noise</find>
       <find>GENERATE</find>
       <find>get_Ac</find>
       <find>get_action</find>
@@ -83,7 +77,11 @@
       <find>naf</find>
       <find>nn</find>
       <find>config</find>
+      <find>noise</find>
       <find>for</find>
+      <find>get_actions</find>
+      <find>create</find>
+      <find>adam</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,8 +97,8 @@
         <option value="$PROJECT_DIR$/baselines/her/her.py" />
         <option value="$PROJECT_DIR$/baselines/her/util.py" />
         <option value="$PROJECT_DIR$/baselines/her/experiment/config.py" />
-        <option value="$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py" />
         <option value="$PROJECT_DIR$/baselines/her/naf.py" />
+        <option value="$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py" />
       </list>
     </option>
   </component>
@@ -241,12 +239,12 @@
       <workItem from="1558036548410" duration="443000" />
       <workItem from="1558091380430" duration="575000" />
       <workItem from="1558097021183" duration="150000" />
-      <workItem from="1558097197729" duration="34499000" />
+      <workItem from="1558097197729" duration="36426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37322000" />
+    <option name="totallyTimeSpent" value="39249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="677" extended-state="0" />
@@ -294,13 +292,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/baselines/her/naf.py</url>
-          <line>252</line>
+          <line>254</line>
           <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/baselines/her/naf.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -445,26 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/ddpg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="296" column="20" selection-start-line="296" selection-start-column="14" selection-end-line="296" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/actor_critic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.conda/envs/keratoconus_dl/lib/python3.7/site-packages/tensorflow/python/keras/engine/base_layer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -506,10 +479,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py">
+    <entry file="file://$PROJECT_DIR$/baselines/her/ddpg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="101">
+          <caret line="193" column="55" selection-start-line="193" selection-start-column="49" selection-end-line="193" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselines/her/actor_critic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="82" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -518,10 +501,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/baselines/her/naf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        <state relative-caret-position="87">
+          <caret line="328" column="17" selection-start-line="328" selection-start-column="13" selection-end-line="328" selection-end-column="17" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baselines/her/naf_utils/naf_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>

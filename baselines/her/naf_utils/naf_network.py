@@ -27,7 +27,7 @@ class Network:
     # Prepare inputs for actor and critic.
     o = self.o_stats.normalize(self.o_tf)
     g = self.g_stats.normalize(self.g_tf)
-    input_pi = tf.concat(axis=1, values=[o, g, self.u_tf/self.max_u])
+    input_pi = tf.concat(axis=1, values=[o, g])
 
     hid_outs = {}
 
@@ -64,12 +64,19 @@ class Network:
       hid_outs['value'], hid_outs['l'], hid_outs['pi_tf'] = hidden_3_out, hidden_3_out, hidden_3_out
 
     with tf.variable_scope('value'):
-      weights_val = tf.get_variable(name="val_w", shape=[self.hidden,1],
+      weights_val = tf.get_variable(name="val_w", shape=[self.hidden,self.hidden/2],
                                          dtype=tf.float32, initializer=self.random_uniform_init)
 
-      bias_val = tf.get_variable(name="val_b", shape=[1],
+      bias_val = tf.get_variable(name="val_b", shape=[self.hidden/2],
                                       dtype=tf.float32, initializer=self.random_uniform_init)
       self.value = tf.nn.tanh(tf.nn.xw_plus_b(hid_outs["value"], weights=weights_val, biases=bias_val))
+
+      weights_val_2 = tf.get_variable(name="val_w_2", shape=[self.hidden/2, 1],
+                                    dtype=tf.float32, initializer=self.random_uniform_init)
+
+      bias_val_2 = tf.get_variable(name="val_b_2", shape=[1],
+                                 dtype=tf.float32, initializer=self.random_uniform_init)
+      self.value = tf.nn.tanh(tf.nn.xw_plus_b(self.value, weights=weights_val_2, biases=bias_val_2))
 
 
     with tf.variable_scope('advantage'):
@@ -85,7 +92,7 @@ class Network:
 
       bias_pi_tf = tf.get_variable(name="pi_tf_b", shape=[dimu],
                                  dtype=tf.float32, initializer=self.random_uniform_init)
-      self.pi_tf = tf.nn.xw_plus_b(hid_outs["pi_tf"], weights=weights_pi_tf, biases=bias_pi_tf)
+      self.pi_tf = self.max_u * tf.nn.tanh(tf.nn.xw_plus_b(hid_outs["pi_tf"], weights=weights_pi_tf, biases=bias_pi_tf))
 
       pivot = 0
       rows = []
@@ -106,5 +113,4 @@ class Network:
       A = -tf.matmul(tf.transpose(tmp, [0, 2, 1]), tf.matmul(P, tmp)) / 2
       self.A = tf.reshape(A, [-1, 1])
       self.Q = self.A + self.value
-
 
