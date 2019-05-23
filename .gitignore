@@ -1,4 +1,8 @@
-RL Proj/logs/*
-RL Proj/models/*
-RL Proj/*.ipynb
-RL Proj/.ipynb*
+her/logs/*
+her/models/*
+*.ipynb
+.ipynb*
+.ipynb_checkpoints
+__pycache__/
+.DS_Store
+data.pkl

@@ -2,53 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c279c318-f530-4e7e-b4c0-10b4d1094934" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/atari_wrappers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/cg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/cmd_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/console_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/dataset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/distributions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/math_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mpi_adam_optimizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mpi_fork.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mpi_running_mean_std.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/plot_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/policies.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/retro_wrappers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/runners.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/schedules.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/segment_tree.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/test_mpi_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/envs/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/envs/fixed_sequence_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/envs/identity_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/envs/identity_env_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/envs/mnist_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_cartpole.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_doc_examples.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_env_after_learn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_fetchreach.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_fixed_sequence.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_identity.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_mnist.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_plot_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_schedules.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_segment_tree.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_serialization.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_tf_util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/test_with_mpi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tests/util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/tile_images.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/vec_env/vec_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/vec_env/vec_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/wrappers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/her/naf_utils/naf_network_seperate.py" beforeDir="false" afterPath="$PROJECT_DIR$/her/naf_utils/naf_network_seperate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/her/naf_utils/naf_network_shared.py" beforeDir="false" afterPath="$PROJECT_DIR$/her/naf_utils/naf_network_shared.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model.ckpt.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/model.ckpt.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model.ckpt.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/model.ckpt.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model.ckpt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/models/model.ckpt.meta" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -369,12 +324,12 @@
       <workItem from="1558181750135" duration="3192000" />
       <workItem from="1558258366800" duration="2613000" />
       <workItem from="1558270114420" duration="7663000" />
-      <workItem from="1558593769838" duration="5295000" />
+      <workItem from="1558593769838" duration="5505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58641000" />
+    <option name="totallyTimeSpent" value="58851000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="654" extended-state="0" />
@@ -857,8 +812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
