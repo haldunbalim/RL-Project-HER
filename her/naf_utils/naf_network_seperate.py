@@ -30,8 +30,6 @@ class Network:
     g = self.g_stats.normalize(self.g_tf)
     input_pi = tf.concat(axis=1, values=[o, g])
 
-    hid_outs = {}
-
     # Networks.
     with tf.variable_scope('value'):
         self.value = tf.nn.tanh(nn(input_pi, layers_sizes=[64,64,64,1], reuse=False, flatten=False, name="value_scope"))

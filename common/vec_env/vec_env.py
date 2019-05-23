@@ -2,7 +2,6 @@ import contextlib
 import os
 from abc import ABC, abstractmethod
 
-from common import tile_images
 
 class AlreadySteppingError(Exception):
     """

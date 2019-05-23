@@ -1,5 +1,5 @@
 import tensorflow as tf
-from her.util import store_args
+from her.util import store_args,nn
 
 
 class Network:
@@ -25,6 +25,8 @@ class Network:
     self.g_tf = inputs_tf['g']
     self.u_tf = inputs_tf['u']
 
+    self.dimo,self.dimg,self.dimu = dimo,dimg,dimu
+
     # Prepare inputs for actor and critic.
     o = self.o_stats.normalize(self.o_tf)
     g = self.g_stats.normalize(self.g_tf)
@@ -33,26 +35,10 @@ class Network:
     hid_outs = {}
 
     # Networks.
-    with tf.variable_scope('hidden'):
-      hl_1_out = tf.nn.relu(tf.layers.dense(inputs=input_pi,
-                                            units=64,
-                                            kernel_initializer=tf.contrib.layers.xavier_initializer(),
-                                            reuse=False,
-                                            name="hl_1"))
+    with tf.variable_scope('shared'):
+      shared_out = tf.nn.relu(nn(input_pi, layers_sizes=[64,128,64], reuse=False, flatten=False, name="shared"))
 
-      hl_2_out = tf.nn.relu(tf.layers.dense(inputs=hl_1_out,
-                                            units=64,
-                                            kernel_initializer=tf.contrib.layers.xavier_initializer(),
-                                            reuse=False,
-                                            name="hl_2"))
-
-      hl_3_out = tf.nn.relu(tf.layers.dense(inputs=hl_2_out,
-                                            units=64,
-                                            kernel_initializer=tf.contrib.layers.xavier_initializer(),
-                                            reuse=False,
-                                            name="hl_3"))
-
-      hid_outs['value'], hid_outs['l'], hid_outs['pi_tf'] = hl_3_out, hl_3_out, hl_3_out
+      hid_outs['value'], hid_outs['l'], hid_outs['pi_tf'] = shared_out, shared_out, shared_out
 
     with tf.variable_scope('value'):
         self.value =  tf.nn.tanh(tf.layers.dense(inputs=hid_outs['value'],
@@ -75,25 +61,31 @@ class Network:
                                                             kernel_initializer=tf.contrib.layers.xavier_initializer(),
                                                             reuse=False,
                                                             name="pi_out"))
+      self.A, self.Q = self.calculate_q()
 
+
+
+  def calculate_q(self):
       pivot = 0
       rows = []
-      for idx in range(dimu):
-        count = dimu - idx
+      for idx in range(self.dimu):
+          count = self.dimu - idx
 
-        diag_elem = tf.exp(tf.slice(self.l, (0, pivot), (-1, 1)))
-        non_diag_elems = tf.slice(self.l, (0, pivot + 1), (-1, count - 1))
-        row = tf.pad(tf.concat((diag_elem, non_diag_elems), 1), ((0, 0), (idx, 0)))
-        rows.append(row)
+          diag_elem = tf.exp(tf.slice(self.l, (0, pivot), (-1, 1)))
+          non_diag_elems = tf.slice(self.l, (0, pivot + 1), (-1, count - 1))
+          row = tf.pad(tf.concat((diag_elem, non_diag_elems), 1), ((0, 0), (idx, 0)))
+          rows.append(row)
 
-        pivot += count
+          pivot += count
 
       L = tf.transpose(tf.stack(rows, axis=1), (0, 2, 1))
       P = tf.matmul(L, tf.transpose(L, (0, 2, 1)))
 
       tmp = tf.expand_dims(self.u_tf - self.pi_tf, -1)
       A = -tf.matmul(tf.transpose(tmp, [0, 2, 1]), tf.matmul(P, tmp)) / 2
-      self.A = tf.reshape(A, [-1, 1])
-      self.Q = self.A + self.value
+      A = tf.reshape(A, [-1, 1])
+      Q = A+ self.value
+      return A,Q
+
 
 

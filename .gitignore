@@ -1,0 +1,4 @@
+RL Proj/logs/*
+RL Proj/models/*
+RL Proj/*.ipynb
+RL Proj/.ipynb*
