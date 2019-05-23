@@ -1,5 +1,5 @@
-logs/**
-models/*
+logs/
+models/
 *.ipynb
 .ipynb*
 .ipynb_checkpoints
