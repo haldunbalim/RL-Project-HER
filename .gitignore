@@ -1,8 +1,10 @@
-her/logs/*
-her/models/*
+logs/**
+models/*
 *.ipynb
 .ipynb*
 .ipynb_checkpoints
 __pycache__/
 .DS_Store
 data.pkl
+Plot Statistics.ipynb
+.idea
