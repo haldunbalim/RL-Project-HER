@@ -11,43 +11,12 @@ random_uniform_small = tf.random_uniform_initializer(-3e-4, 3e-4)
 # he_uniform = initializers.variance_scaling_initializer(factor=2.0, mode='FAN_IN', uniform=False)
 he_uniform = tf.contrib.layers.variance_scaling_initializer(factor=2.0, mode='FAN_IN', uniform=False)
 
-def fc(layer, output_size, is_training,
-       weight_init, weight_reg=None, activation_fn=None,
-       use_batch_norm=False, scope='fc'):
-  if use_batch_norm:
-    batch_norm_args = {
-      'normalizer_fn': batch_norm,
-      'normalizer_params': {
-        'is_training': is_training,
-      }
-    }
-  else:
-    batch_norm_args = {}
-
-  with tf.variable_scope(scope):
-    return fully_connected(
-      layer,
-      num_outputs=int(output_size),
-      activation_fn=activation_fn,
-      weights_initializer=weight_init,
-      weights_regularizer=weight_reg,
-      biases_initializer=tf.constant_initializer(0.0),
-      scope=scope,
-      **batch_norm_args
-    )
-
 from tensorflow.contrib.framework.python.ops import add_arg_scope
 from tensorflow.contrib.framework.python.ops import variables
-from tensorflow.contrib.layers.python.layers import initializers
 from tensorflow.contrib.layers.python.layers import utils
-
-from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
-from tensorflow.python.ops import array_ops
-from tensorflow.python.ops import control_flow_ops
 from tensorflow.python.ops import init_ops
 from tensorflow.python.ops import nn
-from tensorflow.python.ops import standard_ops
 from tensorflow.python.ops import variable_scope
 from tensorflow.python.training import moving_averages
 

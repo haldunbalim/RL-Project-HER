@@ -86,7 +86,7 @@ def train(*, policy, rollout_worker, evaluator,
 
 
 def learn(*, network, env, total_timesteps,
-    seed=None,
+    seed=123,
     eval_env=None,
     replay_strategy='future',
     policy_save_interval=5,
@@ -104,6 +104,7 @@ def learn(*, network, env, total_timesteps,
         num_cpu = MPI.COMM_WORLD.Get_size()
 
     # Seed everything.
+
     rank_seed = seed + 1000000 * rank if seed is not None else None
     set_global_seeds(rank_seed)
 

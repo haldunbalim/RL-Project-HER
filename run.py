@@ -1,9 +1,6 @@
 import sys
-import re
 import multiprocessing
 import os.path as osp
-import gym
-from collections import defaultdict
 import tensorflow as tf
 import numpy as np
 
@@ -18,36 +15,6 @@ try:
     from mpi4py import MPI
 except ImportError:
     MPI = None
-
-try:
-    import pybullet_envs
-except ImportError:
-    pybullet_envs = None
-
-try:
-    import roboschool
-except ImportError:
-    roboschool = None
-
-_game_envs = defaultdict(set)
-for env in gym.envs.registry.all():
-    # TODO: solve this with regexes
-    env_type = env._entry_point.split(':')[0].split('.')[-1]
-    _game_envs[env_type].add(env.id)
-
-# reading benchmark names directly from retro requires
-# importing retro here, and for some reason that crashes tensorflow
-# in ubuntu
-_game_envs['retro'] = {
-    'BubbleBobble-Nes',
-    'SuperMarioBros-Nes',
-    'TwinBee3PokoPokoDaimaou-Nes',
-    'SpaceHarrier-Nes',
-    'SonicTheHedgehog-Genesis',
-    'Vectorman-Genesis',
-    'FinalFight-Snes',
-    'SpaceInvaders-Snes',
-}
 
 
 def train(args, extra_args):
@@ -66,7 +33,7 @@ def train(args, extra_args):
         env = VecVideoRecorder(env, osp.join(logger.get_dir(), "videos"), record_video_trigger=lambda x: x % args.save_video_interval == 0, video_length=args.save_video_length)
 
     if alg_kwargs.get('network') is None:
-            alg_kwargs['network'] = get_default_network(env_type)
+            alg_kwargs['network'] = "mlp"
 
     print('Training {} on {}:{} with arguments \n{}'.format(args.alg, env_type, env_id, alg_kwargs))
 
@@ -87,7 +54,7 @@ def build_env(args):
     alg = args.alg
     seed = args.seed
 
-    env_type, env_id = get_env_type(args)
+    env_type, env_id = args.env_type, args.env
 
     if env_type in {'atari', 'retro'}:
         if alg == 'deepq':
@@ -111,42 +78,7 @@ def build_env(args):
 
         if env_type == 'mujoco':
             env = VecNormalize(env, use_tf=True)
-
     return env
-
-
-def get_env_type(args):
-    env_id = args.env
-
-    if args.env_type is not None:
-        return args.env_type, env_id
-
-    # Re-parse the gym registry, since we could have new envs since last time.
-    for env in gym.envs.registry.all():
-        env_type = env._entry_point.split(':')[0].split('.')[-1]
-        _game_envs[env_type].add(env.id)  # This is a set so add is idempotent
-
-    if env_id in _game_envs.keys():
-        env_type = env_id
-        env_id = [g for g in _game_envs[env_type]][0]
-    else:
-        env_type = None
-        for g, e in _game_envs.items():
-            if env_id in e:
-                env_type = g
-                break
-        if ':' in env_id:
-            env_type = re.sub(r':.*', '', env_id)
-        assert env_type is not None, 'env_id {} is not recognized in env types'.format(env_id, _game_envs.keys())
-
-    return env_type, env_id
-
-
-def get_default_network(env_type):
-    if env_type in {'atari', 'retro'}:
-        return 'cnn'
-    else:
-        return 'mlp'
 
 def get_alg_module(alg, submodule=None):
     submodule = submodule or alg

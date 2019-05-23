@@ -58,6 +58,7 @@ def nn(input, layers_sizes, reuse=None, flatten=False, name=""):
     """Creates a simple neural network
     """
     for i, size in enumerate(layers_sizes):
+
         activation = tf.nn.relu if i < len(layers_sizes) - 1 else None
         input = tf.layers.dense(inputs=input,
                                 units=size,

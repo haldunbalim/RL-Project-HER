@@ -25,17 +25,22 @@ class NAF(object):
                  Q_lr, pi_lr, norm_eps, norm_clip, max_u, action_l2, clip_obs, scope, T,
                  rollout_batch_size, subtract_goals, relative_goals, clip_pos_returns, clip_return,
                  bc_loss, q_filter, num_demo, demo_batch_size, prm_loss_weight, aux_loss_weight,
-                 sample_transitions, gamma, reuse=False, **kwargs):
+                 sample_transitions, gamma, reuse=False,use_seperate_networks=False, **kwargs):
 
         if self.clip_return is None:
             self.clip_return = np.inf
 
-        self.create_naf_network = import_function("her.naf_utils.naf_network:Network")
+
+        if use_seperate_networks:
+            self.create_naf_network = import_function("her.naf_utils.naf_network_seperate:Network")
+        else:
+            self.create_naf_network = import_function("her.naf_utils.naf_network_shared:Network")
 
         input_shapes = dims_to_shapes(self.input_dims)
         self.dimo = self.input_dims['o']
         self.dimg = self.input_dims['g']
         self.dimu = self.input_dims['u']
+        self.counter=0
 
         # Prepare staging area for feeding data to the model.
         stage_shapes = OrderedDict()
@@ -106,7 +111,8 @@ class NAF(object):
             policy.u_tf: np.zeros((o.size // self.dimo, self.dimu), dtype=np.float32)
         }
 
-        ret = self.sess.run(vals, feed_dict=feed)
+
+        ret=self.sess.run(vals, feed_dict=feed)
         # action postprocessing
         u = ret[0]
         noise = noise_eps * self.max_u * np.random.randn(*u.shape)  # gaussian noise
@@ -316,6 +322,7 @@ class NAF(object):
         clip_range = (-self.clip_return, 0. if self.clip_pos_returns else np.inf)
         target_tf = tf.clip_by_value(batch_tf['r'] + self.gamma * target_value, *clip_range)
         self.Q_loss_tf = tf.reduce_mean(tf.square(target_tf - self.main.Q))
+        tf.summary.histogram("Q_loss", self.Q_loss_tf)
 
         Q_grads_tf = tf.gradients(self.Q_loss_tf, self._vars('main'))
 
@@ -329,8 +336,8 @@ class NAF(object):
 
 
         # polyak averaging
-        self.main_vars = self._vars('main/hidden') + self._vars('main/value') + self._vars('main/advantage')
-        self.target_vars = self._vars('target/hidden') + self._vars('target/value')+self._vars('target/advantage')
+        self.main_vars = self._vars('main')
+        self.target_vars = self._vars('target')
         self.stats_vars = self._global_vars('o_stats') + self._global_vars('g_stats')
         self.init_target_net_op = list(
             map(lambda v: v[0].assign(v[1]), zip(self.target_vars, self.main_vars)))
@@ -341,6 +348,14 @@ class NAF(object):
         tf.variables_initializer(self._global_vars('')).run()
         self._sync_optimizers()
         self._init_target_net()
+
+
+        visualize=True
+        if visualize:
+            writer = tf.summary.FileWriter("output", self.sess.graph)
+            writer.close()
+            saver = tf.train.Saver()
+            saver.save(self.sess, "./models/model.ckpt")
 
     def logs(self, prefix=''):
         logs = []

@@ -21,7 +21,7 @@ DEFAULT_PARAMS = {
     # ddpg
     'layers': 3,  # number of layers in the critic/actor networks
     'hidden': 256,  # number of neurons in each hidden layers
-    'network_class': 'baselines.her.actor_critic:ActorCritic',
+    'network_class': 'her.actor_critic:ActorCritic',
     'Q_lr': 0.001,  # critic learning rate
     'pi_lr': 0.001,  # actor learning rate
     'buffer_size': int(1E6),  # for experience replay
@@ -38,8 +38,8 @@ DEFAULT_PARAMS = {
     'n_test_rollouts': 10,  # number of test rollouts per epoch, each consists of rollout_batch_size rollouts
     'test_with_polyak': False,  # run test episodes with the target network
     # exploration
-    'random_eps': 0.3,  # percentage of time a random action is taken
-    'noise_eps': 0.2,  # std of gaussian noise added to not-completely-random actions as a percentage of max_u
+    'random_eps': 0.25,  # percentage of time a random action is taken
+    'noise_eps': 0.25,  # std of gaussian noise added to not-completely-random actions as a percentage of max_u
     # HER
     'replay_strategy': 'future',  # supported modes: future, none
     'replay_k': 4,  # number of additional goals used for replay, only used if off_policy_data=future
@@ -187,6 +187,7 @@ def configure_naf(dims, params, reuse=False, use_mpi=True, clip_return=True):
     sample_her_transitions = configure_her(params)
     # Extract relevant parameters.
     gamma = params['gamma']
+    params["scope"]="naf"
     rollout_batch_size = params['rollout_batch_size']
     naf_params = params['ddpg_params']
 
