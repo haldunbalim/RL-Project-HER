@@ -4,8 +4,7 @@ import os.path as osp
 import tensorflow as tf
 import numpy as np
 
-from common.vec_env import VecFrameStack, VecNormalize, VecEnv
-from common.vec_env.vec_video_recorder import VecVideoRecorder
+from common.vec_env import VecNormalize, VecEnv
 from common.cmd_util import common_arg_parser, parse_unknown_args, make_vec_env, make_env
 from common.tf_util import get_session
 import logger
@@ -29,8 +28,6 @@ def train(args, extra_args):
     alg_kwargs.update(extra_args)
 
     env = build_env(args)
-    if args.save_video_interval != 0:
-        env = VecVideoRecorder(env, osp.join(logger.get_dir(), "videos"), record_video_trigger=lambda x: x % args.save_video_interval == 0, video_length=args.save_video_length)
 
     if alg_kwargs.get('network') is None:
             alg_kwargs['network'] = "mlp"
